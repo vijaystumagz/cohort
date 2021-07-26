@@ -52,23 +52,15 @@
         gtag('config', 'AW-374926187');
     </script>
 
-    <!-- Event snippet for Cohort Sign up conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
     <script>
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof (url) != 'undefined') {
-                    window.location = url;
-                }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-374926187/Ll9KCLOqztsCEOvW47IB',
-                'event_callback': callback
+        window.addEventListener('load', function () {
+            jQuery('a[href*="https://forms.gle/"]').click(function () {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-374926187/dVJFCLjl-NwCEOvW47IB'
+                });
             });
-            return false;
-        }
+        });
     </script>
-
 
 
 
